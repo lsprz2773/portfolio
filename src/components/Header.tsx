@@ -5,7 +5,6 @@ import type { Dictionary, Locale } from "@/app/[lang]/dictionaries";
 
 type HeaderProps = {
   lang: Locale;
-  name: string;
   dict: Dictionary["nav"];
 };
 
@@ -55,16 +54,14 @@ function LanguageSwitcher({ lang, label }: { lang: Locale; label: string }) {
   );
 }
 
-export function Header({ lang, name, dict }: HeaderProps) {
+export function Header({ lang, dict }: HeaderProps) {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="header-in sticky top-0 z-50 border-b border-line bg-background">
       <span aria-hidden className="scroll-progress" />
       <div className="mx-auto flex max-w-[1280px] items-center justify-between px-4 py-4 md:px-16 md:py-5">
-        <a href="#top" className="text-base font-semibold md:text-[17px]">
-          {name}
-        </a>
+        <div aria-hidden className="flex-1" />
 
         <nav className="hidden gap-8 text-[15px] text-muted md:flex" aria-label="Main">
           {sections.map((id) => (
@@ -78,7 +75,7 @@ export function Header({ lang, name, dict }: HeaderProps) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3 md:gap-5">
+        <div className="flex flex-1 items-center justify-end gap-3 md:gap-5">
           <span className="hidden items-center gap-2 text-sm text-muted lg:flex">
             <span className="dot-live h-2 w-2 rounded-full bg-available" aria-hidden />
             {dict.available}

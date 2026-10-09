@@ -15,11 +15,7 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
 
   return (
     <>
-      <Header
-        lang={lang}
-        name={`${dict.hero.firstName} ${dict.hero.lastName.split(" ")[0]}`}
-        dict={dict.nav}
-      />
+      <Header lang={lang} dict={dict.nav} />
       <main className="page-in">
         <Hero dict={dict} />
         <Work dict={dict.work} />
