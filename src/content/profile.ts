@@ -41,7 +41,13 @@ export const profile = {
     {
       github: "https://github.com/lsprz2773/BariaPlus_Frontend" as string | null,
       demo: null as string | null,
-      images: [] as string[], // e.g. "/projects/bariaplus/1.webp"
+      images: [
+        "/projects/bariaplus/1.webp",
+        "/projects/bariaplus/2.webp",
+        "/projects/bariaplus/3.webp",
+        "/projects/bariaplus/4.webp",
+        "/projects/bariaplus/5.webp",
+      ],
     },
   ],
 };
