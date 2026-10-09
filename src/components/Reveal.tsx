@@ -33,7 +33,8 @@ export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
           observer.disconnect();
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+      // Wait until the element is well inside the screen, so the motion is seen
+      { threshold: 0.2, rootMargin: "0px 0px -15% 0px" },
     );
 
     observer.observe(element);

@@ -139,14 +139,14 @@ button:focus-visible {
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(48px);
   transition:
-    opacity 0.7s var(--ease-out) var(--reveal-delay, 0ms),
-    transform 0.7s var(--ease-out) var(--reveal-delay, 0ms);
+    opacity 0.9s var(--ease-out) var(--reveal-delay, 0ms),
+    transform 1s var(--ease-out) var(--reveal-delay, 0ms);
 }
 
 .reveal.reveal-left {
-  transform: translateX(-24px);
+  transform: translateX(-48px);
 }
 
 .reveal[data-visible="true"] {
@@ -201,12 +201,12 @@ button:focus-visible {
   }
 
   .reveal {
-    transform: translateY(12px);
-    transition-duration: 0.35s;
+    transform: translateY(28px);
+    transition-duration: 0.7s, 0.8s;
   }
 
   .reveal.reveal-left {
-    transform: translateX(-12px);
+    transform: translateX(-28px);
   }
 
   .reveal[data-visible="true"] {
