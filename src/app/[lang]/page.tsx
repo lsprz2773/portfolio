@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { Contact } from "@/components/Contact";
 import { Experience } from "@/components/Experience";
-import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
@@ -29,7 +28,6 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
         <Skills dict={dict.skills} />
         <Contact dict={dict.contact} pending={dict.common.pending} />
       </main>
-      <Footer dict={dict.footer} />
     </>
   );
 }
