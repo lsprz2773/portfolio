@@ -434,6 +434,42 @@ button:focus-visible {
   }
 }
 
+/* ---------- Language switch: fade out, then fade in ----------
+   /en and /es are separate documents, so the browser's cross-document
+   view transition does the work. Browsers without support just navigate. */
+
+html {
+  background: var(--background);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+@keyframes vt-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-in {
+  from {
+    opacity: 0;
+  }
+}
+
+::view-transition-old(root) {
+  animation: vt-out 0.25s ease-in both;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  animation: vt-in 0.4s ease-out 0.2s both;
+  mix-blend-mode: normal;
+}
+
 /* Content stays visible when JavaScript is not available */
 @media (scripting: none) {
   .reveal {
