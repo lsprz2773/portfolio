@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
-import { contactLinks } from "@/content/links";
+import { socialLinks } from "@/content/links";
 import { profile } from "@/content/profile";
 import { LinkList } from "./LinkList";
 import { Parallax } from "./Parallax";
@@ -94,7 +94,7 @@ export function Hero({ dict }: HeroProps) {
           </div>
 
           <div className="hero-rise w-full lg:w-[340px] lg:flex-none" style={{ animationDelay: "850ms" }}>
-            <LinkList items={contactLinks(contact)} pendingLabel={common.pending} />
+            <LinkList items={socialLinks(contact)} pendingLabel={common.pending} />
           </div>
         </div>
       </div>

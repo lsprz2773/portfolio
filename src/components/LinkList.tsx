@@ -1,5 +1,9 @@
+import { SocialIcon, type SocialIconName } from "./SocialIcon";
+
 export type LinkItem = {
   label: string;
+  /** Optional icon shown before the label. */
+  icon?: SocialIconName;
   /** Final URL (https, mailto, tel). `null` while the data is pending. */
   href: string | null;
   /** Text shown on the right when there is no arrow, e.g. an email address. */
@@ -24,7 +28,10 @@ export function LinkList({ items, pendingLabel, tone = "light" }: LinkListProps)
         const external = item.href?.startsWith("https://");
         const row = (
           <span className="flex items-center justify-between py-3.5 text-[17px]">
-            <span>{item.label}</span>
+            <span className="flex items-center gap-3">
+              {item.icon && <SocialIcon name={item.icon} />}
+              {item.label}
+            </span>
             {item.href ? (
               <span
                 aria-hidden={item.value ? undefined : true}

@@ -8,7 +8,15 @@ type ContactLabels = {
   phone: string;
 };
 
-/** Contact links shared by the hero and the contact section. */
+/** Social networks shown next to the photo in the hero. */
+export function socialLinks(labels: Pick<ContactLabels, "github" | "linkedin">): LinkItem[] {
+  return [
+    { label: labels.github, icon: "github", href: profile.github },
+    { label: labels.linkedin, icon: "linkedin", href: profile.linkedin },
+  ];
+}
+
+/** Full contact list for the contact section. */
 export function contactLinks(labels: ContactLabels): LinkItem[] {
   return [
     { label: labels.github, href: profile.github },
