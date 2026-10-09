@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
+import { DotField } from "@/components/DotField";
 import "../globals.css";
 import { getDictionary, hasLocale, locales } from "./dictionaries";
 
@@ -37,7 +38,10 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} className={`${dmSans.variable} antialiased`}>
-      <body>{children}</body>
+      <body>
+        <DotField />
+        {children}
+      </body>
     </html>
   );
 }
