@@ -42,10 +42,11 @@ export default async function RootLayout({
         {/* Runs before first paint:
             - after a language switch, skip the intro animations
             - keep scroll restoration on "manual" (the browser reads it on the next reload) and
-              on a plain reload without #anchor, start at the top */}
+              on a plain reload without #anchor, force the top a few times while the page loads
+              (Safari on iOS restores late), and stop as soon as the user touches or scrolls */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{if(sessionStorage.getItem("lang-switch")){document.documentElement.dataset.switched="true";sessionStorage.removeItem("lang-switch")}}catch(e){}try{history.scrollRestoration="manual";var n=performance.getEntriesByType("navigation")[0];if(n&&n.type==="reload"&&!location.hash){window.scrollTo(0,0);addEventListener("load",function(){window.scrollTo(0,0)})}}catch(e){}`,
+            __html: `try{if(sessionStorage.getItem("lang-switch")){document.documentElement.dataset.switched="true";sessionStorage.removeItem("lang-switch")}}catch(e){}try{history.scrollRestoration="manual";var n=performance.getEntriesByType("navigation")[0];if(n&&n.type==="reload"&&!location.hash){var stop=false,top=function(){if(stop)return;try{window.scrollTo({top:0,left:0,behavior:"instant"})}catch(e){window.scrollTo(0,0)}},halt=function(){stop=true};top();addEventListener("pageshow",top);addEventListener("load",top);[100,300,700].forEach(function(t){setTimeout(top,t)});["touchstart","wheel","keydown"].forEach(function(k){addEventListener(k,halt,{once:true,passive:true})})}}catch(e){}`,
           }}
         />
       </head>
