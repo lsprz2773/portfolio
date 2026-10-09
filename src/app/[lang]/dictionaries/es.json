@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "Luis Angel Perez Aguilera | Portafolio",
+    "description": "Portafolio de Luis Angel Perez Aguilera, estudiante de Ingeniería en Software."
+  },
+  "common": {
+    "pending": "Próximamente"
+  },
+  "nav": {
+    "work": "Proyectos",
+    "services": "Servicios",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "available": "Disponible para proyectos",
+    "language": "Idioma",
+    "menu": "Menú"
+  },
+  "hero": {
+    "hello": "Hola, soy",
+    "firstName": "Luis Angel",
+    "lastName": "Perez Aguilera",
+    "role": "Estudiante de Ingeniería en Software",
+    "intro": "Creo productos web limpios y confiables.",
+    "photoPending": "Foto de perfil próximamente",
+    "getInTouch": "Contáctame",
+    "viewWork": "Ver proyectos"
+  },
+  "work": {
+    "title": "Proyectos destacados",
+    "items": [
+      { "name": "Nombre del proyecto", "description": "Descripción del proyecto próximamente.", "tech": ["Tecnología", "Tecnología"] },
+      { "name": "Nombre del proyecto", "description": "Descripción del proyecto próximamente.", "tech": ["Tecnología", "Tecnología"] },
+      { "name": "Nombre del proyecto", "description": "Descripción del proyecto próximamente.", "tech": ["Tecnología", "Tecnología"] }
+    ],
+    "imagePending": "Imagen del proyecto próximamente"
+  },
+  "services": {
+    "title": "Áreas de trabajo",
+    "items": [
+      { "name": "Desarrollo web", "description": "Descripción próximamente." },
+      { "name": "Diseño de interfaces", "description": "Descripción próximamente." },
+      { "name": "Ingeniería de software", "description": "Descripción próximamente." }
+    ]
+  },
+  "experience": {
+    "title": "Experiencia y formación",
+    "educationLabel": "Formación",
+    "degree": "Ingeniería en Tecnologías de la Información e Innovación Digital (Ingeniería en Software)",
+    "institutionPending": "Institución y semestre próximamente",
+    "experienceLabel": "Experiencia",
+    "experiencePending": "Puesto, organización y fechas próximamente"
+  },
+  "skills": {
+    "title": "Habilidades y tecnologías",
+    "languages": "Lenguajes",
+    "tools": "Frameworks y herramientas",
+    "pending": "Próximamente"
+  },
+  "contact": {
+    "titleLine1": "Construyamos",
+    "titleLine2": "algo juntos",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "downloadCv": "Descargar CV (PDF)",
+    "cvPending": "CV próximamente"
+  },
+  "footer": {
+    "copyright": "© 2026 Luis Angel Perez Aguilera",
+    "built": "Hecho con Next.js, desplegado en Vercel"
+  }
+}

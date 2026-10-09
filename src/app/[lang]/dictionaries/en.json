@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "Luis Angel Perez Aguilera | Portfolio",
+    "description": "Portfolio of Luis Angel Perez Aguilera, Software Engineering student."
+  },
+  "common": {
+    "pending": "Coming soon"
+  },
+  "nav": {
+    "work": "Work",
+    "services": "Services",
+    "experience": "Experience",
+    "contact": "Contact",
+    "available": "Available for projects",
+    "language": "Language",
+    "menu": "Menu"
+  },
+  "hero": {
+    "hello": "Hello, I'm",
+    "firstName": "Luis Angel",
+    "lastName": "Perez Aguilera",
+    "role": "Software Engineering student",
+    "intro": "Building clean, reliable web products.",
+    "photoPending": "Profile photo coming soon",
+    "getInTouch": "Get in touch",
+    "viewWork": "View work"
+  },
+  "work": {
+    "title": "Selected work",
+    "items": [
+      { "name": "Project name", "description": "Project description coming soon.", "tech": ["Tech", "Tech"] },
+      { "name": "Project name", "description": "Project description coming soon.", "tech": ["Tech", "Tech"] },
+      { "name": "Project name", "description": "Project description coming soon.", "tech": ["Tech", "Tech"] }
+    ],
+    "imagePending": "Project image coming soon"
+  },
+  "services": {
+    "title": "Areas of work",
+    "items": [
+      { "name": "Web development", "description": "Description coming soon." },
+      { "name": "Interface design", "description": "Description coming soon." },
+      { "name": "Software engineering", "description": "Description coming soon." }
+    ]
+  },
+  "experience": {
+    "title": "Experience and education",
+    "educationLabel": "Education",
+    "degree": "Ingeniería en Tecnologías de la Información e Innovación Digital (Software Engineering)",
+    "institutionPending": "Institution and semester coming soon",
+    "experienceLabel": "Experience",
+    "experiencePending": "Role, organization and dates coming soon"
+  },
+  "skills": {
+    "title": "Skills and technologies",
+    "languages": "Languages",
+    "tools": "Frameworks and tools",
+    "pending": "Coming soon"
+  },
+  "contact": {
+    "titleLine1": "Let's build",
+    "titleLine2": "something together",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "phone": "Phone",
+    "downloadCv": "Download CV (PDF)",
+    "cvPending": "CV coming soon"
+  },
+  "footer": {
+    "copyright": "© 2026 Luis Angel Perez Aguilera",
+    "built": "Built with Next.js, deployed on Vercel"
+  }
+}
