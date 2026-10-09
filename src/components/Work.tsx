@@ -37,7 +37,12 @@ export function Work({ dict }: { dict: Dictionary["work"] }) {
               <Reveal key={item.name} delay={index * 100} className="h-full">
                 <article className="card-lift group flex h-full flex-col rounded-2xl border border-line bg-surface p-4 md:p-5">
                   {links?.images.length ? (
-                    <ProjectGallery images={links.images} alt={item.name} label={dict.showImage} />
+                    <ProjectGallery
+                      images={links.images}
+                      alt={item.name}
+                      label={dict.showImage}
+                      interval={4500 + index * 800}
+                    />
                   ) : (
                     <div className="aspect-[2/1] overflow-hidden rounded-xl">
                       <div className="flex h-full items-center justify-center bg-placeholder p-4 text-center text-sm text-muted transition-transform duration-500 group-hover:scale-105 md:text-base">
