@@ -61,8 +61,6 @@ export function Header({ lang, dict }: HeaderProps) {
     <header className="header-in sticky top-0 z-50 border-b border-line bg-background">
       <span aria-hidden className="scroll-progress" />
       <div className="mx-auto flex max-w-[1280px] items-center justify-between px-4 py-4 md:px-16 md:py-5">
-        <div aria-hidden className="flex-1" />
-
         <nav className="hidden gap-8 text-[15px] text-muted md:flex" aria-label="Main">
           {sections.map((id) => (
             <a
@@ -75,7 +73,7 @@ export function Header({ lang, dict }: HeaderProps) {
           ))}
         </nav>
 
-        <div className="flex flex-1 items-center justify-end gap-3 md:gap-5">
+        <div className="ml-auto flex items-center gap-3 md:gap-5">
           <span className="hidden items-center gap-2 text-sm text-muted lg:flex">
             <span className="dot-live h-2 w-2 rounded-full bg-available" aria-hidden />
             {dict.available}
