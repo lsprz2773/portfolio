@@ -20,7 +20,7 @@ export function contactLinks(labels: ContactLabels): LinkItem[] {
     },
     {
       label: labels.phone,
-      href: profile.phone ? `tel:${profile.phone.replace(/\s/g, "")}` : null,
+      href: profile.phone ? `tel:+52${profile.phone.replace(/\D/g, "")}` : null,
       value: profile.phone,
     },
   ];
