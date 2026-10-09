@@ -3,6 +3,7 @@ import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { contactLinks } from "@/content/links";
 import { profile } from "@/content/profile";
 import { LinkList } from "./LinkList";
+import { Parallax } from "./Parallax";
 
 type HeroProps = {
   dict: Dictionary;
@@ -25,7 +26,7 @@ export function Hero({ dict }: HeroProps) {
           className="relative z-10 text-[clamp(40px,9vw,124px)] font-bold uppercase leading-[0.92] tracking-[-0.03em] md:text-center"
         >
           <span
-            className="hero-rise block text-transparent"
+            className="hero-rise block text-transparent transition-colors duration-500 hover:text-foreground"
             style={{ WebkitTextStroke: "var(--stroke) var(--foreground)", animationDelay: "100ms" }}
           >
             {hero.firstName}
@@ -52,10 +53,9 @@ export function Hero({ dict }: HeroProps) {
           </span>
         </h1>
 
-        <div
-          className="hero-rise relative z-20 mt-8 flex h-[340px] w-full items-center justify-center overflow-hidden rounded-[20px] bg-placeholder p-6 text-center text-sm text-muted md:mx-auto md:mt-10 md:max-w-[300px] lg:absolute lg:left-1/2 lg:top-[150px] lg:mt-0 lg:h-[380px] lg:w-[300px] lg:max-w-none lg:-translate-x-1/2"
-          style={{ animationDelay: "500ms" }}
-        >
+        <div className="relative z-20 mt-8 w-full md:mx-auto md:mt-10 md:max-w-[300px] lg:absolute lg:left-1/2 lg:top-[150px] lg:mt-0 lg:w-[300px] lg:max-w-none lg:-translate-x-1/2">
+          <Parallax>
+            <div className="photo-card relative flex h-[340px] w-full items-center justify-center overflow-hidden rounded-[20px] bg-placeholder p-6 text-center text-sm text-muted lg:h-[380px]">
           {profile.photoPath ? (
             <Image
               src={profile.photoPath}
@@ -66,8 +66,10 @@ export function Hero({ dict }: HeroProps) {
               className="object-cover"
             />
           ) : (
-            hero.photoPending
-          )}
+              hero.photoPending
+            )}
+            </div>
+          </Parallax>
         </div>
 
         <div className="relative z-30 mt-10 flex flex-col gap-10 lg:mt-[260px] lg:flex-row lg:items-end lg:justify-between lg:gap-12">
@@ -77,13 +79,13 @@ export function Hero({ dict }: HeroProps) {
             <div className="flex flex-wrap gap-3">
               <a
                 href="#contact"
-                className="tap rounded-full bg-foreground px-6 py-3.5 text-[15px] font-medium text-background"
+                className="btn btn-solid rounded-full bg-foreground px-6 py-3.5 text-[15px] font-medium text-background"
               >
                 {hero.getInTouch}
               </a>
               <a
                 href="#work"
-                className="tap rounded-full border border-foreground px-6 py-3.5 text-[15px] font-medium"
+                className="btn btn-outline rounded-full border border-foreground px-6 py-3.5 text-[15px] font-medium"
               >
                 {hero.viewWork}
               </a>
