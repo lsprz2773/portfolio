@@ -39,10 +39,13 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${dmSans.variable} antialiased`} suppressHydrationWarning>
       <head>
-        {/* Runs before first paint: after a language switch, skip the intro animations */}
+        {/* Runs before first paint:
+            - after a language switch, skip the intro animations
+            - keep scroll restoration on "manual" (the browser reads it on the next reload) and
+              on a plain reload without #anchor, start at the top */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{if(sessionStorage.getItem("lang-switch")){document.documentElement.dataset.switched="true";sessionStorage.removeItem("lang-switch")}}catch(e){}`,
+            __html: `try{if(sessionStorage.getItem("lang-switch")){document.documentElement.dataset.switched="true";sessionStorage.removeItem("lang-switch")}}catch(e){}try{history.scrollRestoration="manual";var n=performance.getEntriesByType("navigation")[0];if(n&&n.type==="reload"&&!location.hash){window.scrollTo(0,0);addEventListener("load",function(){window.scrollTo(0,0)})}}catch(e){}`,
           }}
         />
       </head>
