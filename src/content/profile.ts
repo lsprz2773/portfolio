@@ -5,6 +5,16 @@ export const profile = {
   phone: "961 453 3787" as string | null,
   github: "https://github.com/lsprz2773" as string | null,
   linkedin: "https://www.linkedin.com/in/luis-p%C3%A9rez-7322a7393" as string | null,
+  social: {
+    facebook: {
+      label: "Luis Perez",
+      href: "https://www.facebook.com/share/1HZbu73HMj/?mibextid=wwXIfr" as string | null,
+    },
+    instagram: {
+      label: "przls27",
+      href: "https://instagram.com/przls27" as string | null,
+    },
+  },
   cvPath: "/cv/luis-angel-perez-aguilera-cv.pdf" as string | null,
   photoPath: "/luis-cutout.webp" as string | null,
   skills: {
@@ -30,7 +40,7 @@ export const profile = {
   projects: [
     {
       github: "https://github.com/AngelChame/readflow-frontend" as string | null,
-      demo: "https://readflow.lat" as string | null,
+      demo: "https://www.readflow.lat" as string | null,
       images: [
         "/projects/readflow/1.webp",
         "/projects/readflow/2.webp",
