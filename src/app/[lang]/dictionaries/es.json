@@ -67,7 +67,6 @@
     "cvPending": "CV próximamente"
   },
   "footer": {
-    "copyright": "© 2026 Luis Angel Perez Aguilera",
-    "built": "Hecho con Next.js, desplegado en Vercel"
+    "copyright": "© 2026 Luis Angel Perez Aguilera"
   }
 }
