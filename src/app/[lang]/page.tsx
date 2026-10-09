@@ -22,7 +22,7 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
         <Services dict={dict.services} />
         <Experience dict={dict.experience} />
         <Skills dict={dict.skills} />
-        <Contact dict={dict.contact} pending={dict.common.pending} />
+        <Contact lang={lang} dict={dict.contact} pending={dict.common.pending} />
       </main>
     </>
   );

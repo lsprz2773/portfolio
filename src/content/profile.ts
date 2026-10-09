@@ -15,7 +15,11 @@ export const profile = {
       href: "https://instagram.com/przls27" as string | null,
     },
   },
-  cvPath: "/cv/luis-angel-perez-aguilera-cv.pdf" as string | null,
+  // One CV per page language. The button opens the one that matches the language in use.
+  cv: {
+    en: "/cv/luis-angel-perez-aguilera-cv-en.pdf" as string | null,
+    es: "/cv/luis-angel-perez-aguilera-cv-es.pdf" as string | null,
+  },
   photoPath: "/luis-cutout.webp" as string | null,
   skills: {
     languages: ["Java", "TypeScript", "SQL", "JavaScript", "Kotlin"],
