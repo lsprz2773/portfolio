@@ -1,7 +1,25 @@
+import Image from "next/image";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
+import { profile } from "@/content/profile";
 import { Reveal } from "./Reveal";
 
+function ProjectLink({ href, label }: { href: string; label: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="link-underline inline-flex items-center gap-1 pb-0.5 text-[15px] font-medium transition-colors hover:text-accent"
+    >
+      {label}
+      <span aria-hidden>&#8599;</span>
+    </a>
+  );
+}
+
 export function Work({ dict }: { dict: Dictionary["work"] }) {
+  const columns = dict.items.length > 2 ? "lg:grid-cols-3" : "lg:grid-cols-2";
+
   return (
     <section id="work" className="scroll-mt-20 border-t border-line px-4 py-16 md:px-16 md:py-24">
       <div className="mx-auto max-w-[1280px]">
@@ -11,40 +29,55 @@ export function Work({ dict }: { dict: Dictionary["work"] }) {
           </h2>
         </Reveal>
 
-        <div className="grid gap-4 md:gap-6 lg:grid-cols-3">
-          {dict.items.map((item, index) => (
-            <Reveal key={index} delay={index * 100}>
-              <article className="card-lift group h-full rounded-2xl border border-line bg-surface p-4 md:p-5">
-                <div className="h-[180px] overflow-hidden rounded-xl md:h-[260px]">
-                  <div className="flex h-full items-center justify-center bg-placeholder p-4 text-center text-sm text-muted transition-transform duration-500 group-hover:scale-105 md:text-base">
-                    {dict.imagePending}
+        <div className={`grid gap-4 md:gap-6 ${columns}`}>
+          {dict.items.map((item, index) => {
+            const links = profile.projects[index];
+
+            return (
+              <Reveal key={item.name} delay={index * 100} className="h-full">
+                <article className="card-lift group flex h-full flex-col rounded-2xl border border-line bg-surface p-4 md:p-5">
+                  <div className="relative h-[200px] overflow-hidden rounded-xl md:h-[300px]">
+                    {links?.image ? (
+                      <Image
+                        src={links.image}
+                        alt={item.name}
+                        fill
+                        sizes="(min-width: 1024px) 560px, 100vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center bg-placeholder p-4 text-center text-sm text-muted transition-transform duration-500 group-hover:scale-105 md:text-base">
+                        {dict.imagePending}
+                      </div>
+                    )}
                   </div>
-                </div>
-                <h3 className="mb-1.5 mt-4 flex items-center text-xl font-semibold md:mb-2 md:mt-6 md:text-2xl">
-                  {item.name}
-                  <span
-                    aria-hidden
-                    className="ml-2 inline-block -translate-x-1 text-accent opacity-0 transition duration-300 group-hover:translate-x-0 group-hover:opacity-100"
-                  >
-                    &#8599;
-                  </span>
-                </h3>
-                <p className="mb-3 text-[15px] text-muted md:mb-4 md:text-base">
-                  {item.description}
-                </p>
-                <ul className="flex flex-wrap gap-1.5">
-                  {item.tech.map((tech, techIndex) => (
-                    <li
-                      key={techIndex}
-                      className="rounded-full border border-line px-3 py-1.5 text-sm text-muted transition-colors hover:border-foreground hover:text-foreground"
-                    >
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            </Reveal>
-          ))}
+
+                  <h3 className="mb-1.5 mt-4 text-xl font-semibold md:mb-2 md:mt-6 md:text-2xl">
+                    {item.name}
+                  </h3>
+                  <p className="mb-3 text-[15px] text-muted md:mb-4 md:text-base">
+                    {item.description}
+                  </p>
+
+                  <ul className="mb-5 flex flex-wrap gap-1.5">
+                    {item.tech.map((tech) => (
+                      <li
+                        key={tech}
+                        className="rounded-full border border-line px-3 py-1.5 text-sm text-muted transition-colors hover:border-foreground hover:text-foreground"
+                      >
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto flex flex-wrap gap-x-6 gap-y-2">
+                    {links?.github && <ProjectLink href={links.github} label={dict.github} />}
+                    {links?.demo && <ProjectLink href={links.demo} label={dict.demo} />}
+                  </div>
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

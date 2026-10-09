@@ -11,7 +11,9 @@ export function Services({ dict }: { dict: Dictionary["services"] }) {
           </h2>
         </Reveal>
 
-        <div className="grid gap-6 md:gap-12 lg:grid-cols-3">
+        <div
+          className={`grid gap-6 md:gap-12 ${dict.items.length > 2 ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}
+        >
           {dict.items.map((item, index) => (
             <Reveal key={index} delay={index * 80} className="group">
               <span className="mb-3 block text-sm font-medium text-accent">

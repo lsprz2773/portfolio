@@ -53,26 +53,27 @@ export function Hero({ dict }: HeroProps) {
           </span>
         </h1>
 
-        <div className="relative z-20 mt-8 w-full md:mx-auto md:mt-10 md:max-w-[300px] lg:absolute lg:left-1/2 lg:top-[150px] lg:mt-0 lg:w-[300px] lg:max-w-none lg:-translate-x-1/2">
+        <div className="pointer-events-none relative z-20 mx-auto mt-6 w-full max-w-[340px] md:mt-8 md:max-w-[400px] lg:absolute lg:left-1/2 lg:top-[230px] lg:mt-0 lg:w-[440px] lg:max-w-none lg:-translate-x-1/2">
           <Parallax>
-            <div className="photo-card relative flex h-[340px] w-full items-center justify-center overflow-hidden rounded-[20px] bg-placeholder p-6 text-center text-sm text-muted lg:h-[380px]">
-          {profile.photoPath ? (
-            <Image
-              src={profile.photoPath}
-              alt={`${hero.firstName} ${hero.lastName}`}
-              fill
-              priority
-              sizes="300px"
-              className="object-cover"
-            />
-          ) : (
-              hero.photoPending
+            {profile.photoPath ? (
+              <Image
+                src={profile.photoPath}
+                alt={`${hero.firstName} ${hero.lastName}`}
+                width={1000}
+                height={933}
+                priority
+                unoptimized
+                className="photo-card h-auto w-full [mask-image:linear-gradient(to_bottom,#000_80%,transparent)]"
+              />
+            ) : (
+              <div className="photo-card flex h-[340px] w-full items-center justify-center rounded-[20px] bg-placeholder p-6 text-center text-sm text-muted lg:h-[380px]">
+                {hero.photoPending}
+              </div>
             )}
-            </div>
           </Parallax>
         </div>
 
-        <div className="relative z-30 mt-10 flex flex-col gap-10 lg:mt-[260px] lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+        <div className="relative z-30 mt-6 flex flex-col gap-10 lg:mt-[340px] lg:flex-row lg:items-end lg:justify-between lg:gap-12">
           <div className="hero-rise min-w-0 flex-1" style={{ animationDelay: "700ms" }}>
             <p className="mb-1.5 text-xl font-semibold">{hero.role}</p>
             <p className="mb-7 max-w-[520px] text-lg text-muted">{hero.intro}</p>
