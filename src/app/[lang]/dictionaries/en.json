@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Luis Angel Perez Aguilera | Portfolio",
-    "description": "Portfolio of Luis Angel Perez Aguilera, Software Engineering student."
+    "description": "Portfolio of Luis Angel Perez Aguilera, Software Engineering student and front-end developer."
   },
   "common": {
     "pending": "Coming soon"
@@ -20,7 +20,7 @@
     "firstName": "Luis Angel",
     "lastName": "Perez Aguilera",
     "role": "Software Engineering student",
-    "intro": "Building clean, reliable web products.",
+    "intro": "Front-end developer building clean, reliable web products with Next.js, Node.js and TypeScript.",
     "photoPending": "Profile photo coming soon",
     "getInTouch": "Get in touch",
     "viewWork": "View work"
@@ -28,27 +28,44 @@
   "work": {
     "title": "Selected work",
     "items": [
-      { "name": "Project name", "description": "Project description coming soon.", "tech": ["Tech", "Tech"] },
-      { "name": "Project name", "description": "Project description coming soon.", "tech": ["Tech", "Tech"] },
-      { "name": "Project name", "description": "Project description coming soon.", "tech": ["Tech", "Tech"] }
+      {
+        "name": "ReadFlow",
+        "description": "Web app for continuous learning based on tests. It applies Ebbinghaus's forgetting curve with AI-generated summaries and spaced quizzes.",
+        "tech": ["Next.js", "TypeScript"]
+      },
+      {
+        "name": "BariaPlus",
+        "description": "Web software for bariatric physicians to keep patient records and appointments in a more organized, simpler way.",
+        "tech": ["Angular", "TypeScript", "RxJS"]
+      }
     ],
-    "imagePending": "Project image coming soon"
+    "imagePending": "Project preview coming soon",
+    "github": "GitHub",
+    "demo": "Live site"
   },
   "services": {
     "title": "Areas of work",
     "items": [
-      { "name": "Web development", "description": "Description coming soon." },
-      { "name": "Interface design", "description": "Description coming soon." },
-      { "name": "Software engineering", "description": "Description coming soon." }
+      {
+        "name": "Web development",
+        "description": "Responsive web interfaces built with Next.js, Angular and TypeScript, connected to REST APIs."
+      },
+      {
+        "name": "Backend development",
+        "description": "REST APIs and services built with Node.js, Express, Java (Javalin, Spring Boot) and Ktor, backed by PostgreSQL."
+      }
     ]
   },
   "experience": {
     "title": "Experience and education",
     "educationLabel": "Education",
     "degree": "Ingeniería en Tecnologías de la Información e Innovación Digital (Software Engineering)",
-    "institutionPending": "Institution and semester coming soon",
+    "institution": "Universidad Politécnica de Chiapas",
+    "educationDetails": "Seventh term · September 2024 - present · Suchiapa, Chiapas",
     "experienceLabel": "Experience",
-    "experiencePending": "Role, organization and dates coming soon"
+    "role": "Project lead, E-commerce",
+    "organization": "Xenio SA de CV · 2026",
+    "experienceDescription": "Development of an e-commerce application for Xenio, with multi-tenant support and integration with external wholesaler APIs."
   },
   "skills": {
     "title": "Skills and technologies",

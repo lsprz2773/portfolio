@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Luis Angel Perez Aguilera | Portafolio",
-    "description": "Portafolio de Luis Angel Perez Aguilera, estudiante de Ingeniería en Software."
+    "description": "Portafolio de Luis Angel Perez Aguilera, estudiante de Ingeniería en Software y desarrollador front-end."
   },
   "common": {
     "pending": "Próximamente"
@@ -20,7 +20,7 @@
     "firstName": "Luis Angel",
     "lastName": "Perez Aguilera",
     "role": "Estudiante de Ingeniería en Software",
-    "intro": "Creo productos web limpios y confiables.",
+    "intro": "Desarrollador front-end que crea productos web limpios y confiables con Next.js, Node.js y TypeScript.",
     "photoPending": "Foto de perfil próximamente",
     "getInTouch": "Contáctame",
     "viewWork": "Ver proyectos"
@@ -28,27 +28,44 @@
   "work": {
     "title": "Proyectos destacados",
     "items": [
-      { "name": "Nombre del proyecto", "description": "Descripción del proyecto próximamente.", "tech": ["Tecnología", "Tecnología"] },
-      { "name": "Nombre del proyecto", "description": "Descripción del proyecto próximamente.", "tech": ["Tecnología", "Tecnología"] },
-      { "name": "Nombre del proyecto", "description": "Descripción del proyecto próximamente.", "tech": ["Tecnología", "Tecnología"] }
+      {
+        "name": "ReadFlow",
+        "description": "Aplicación web de aprendizaje continuo basada en tests. Aplica la curva del olvido de Ebbinghaus con resúmenes y quizzes espaciados creados con inteligencia artificial.",
+        "tech": ["Next.js", "TypeScript"]
+      },
+      {
+        "name": "BariaPlus",
+        "description": "Software web diseñado para médicos bariatras, para llevar el control de expedientes y citas de pacientes de forma más organizada y sencilla.",
+        "tech": ["Angular", "TypeScript", "RxJS"]
+      }
     ],
-    "imagePending": "Imagen del proyecto próximamente"
+    "imagePending": "Vista previa próximamente",
+    "github": "GitHub",
+    "demo": "Sitio en vivo"
   },
   "services": {
     "title": "Áreas de trabajo",
     "items": [
-      { "name": "Desarrollo web", "description": "Descripción próximamente." },
-      { "name": "Diseño de interfaces", "description": "Descripción próximamente." },
-      { "name": "Ingeniería de software", "description": "Descripción próximamente." }
+      {
+        "name": "Desarrollo web",
+        "description": "Interfaces web responsivas con Next.js, Angular y TypeScript, conectadas a APIs REST."
+      },
+      {
+        "name": "Desarrollo backend",
+        "description": "APIs REST y servicios con Node.js, Express, Java (Javalin, Spring Boot) y Ktor, respaldados por PostgreSQL."
+      }
     ]
   },
   "experience": {
     "title": "Experiencia y formación",
     "educationLabel": "Formación",
     "degree": "Ingeniería en Tecnologías de la Información e Innovación Digital (Ingeniería en Software)",
-    "institutionPending": "Institución y semestre próximamente",
+    "institution": "Universidad Politécnica de Chiapas",
+    "educationDetails": "Séptimo cuatrimestre · septiembre 2024 - actualidad · Suchiapa, Chiapas",
     "experienceLabel": "Experiencia",
-    "experiencePending": "Puesto, organización y fechas próximamente"
+    "role": "Líder de proyecto Ecommerce",
+    "organization": "Xenio SA de CV · 2026",
+    "experienceDescription": "Desarrollo de una aplicación Ecommerce para la empresa Xenio, incluye soporte multitenant y conexión con APIs externas de mayoristas."
   },
   "skills": {
     "title": "Habilidades y tecnologías",
