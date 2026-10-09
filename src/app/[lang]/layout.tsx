@@ -37,7 +37,15 @@ export default async function RootLayout({
   if (!hasLocale(lang)) notFound();
 
   return (
-    <html lang={lang} className={`${dmSans.variable} antialiased`}>
+    <html lang={lang} className={`${dmSans.variable} antialiased`} suppressHydrationWarning>
+      <head>
+        {/* Runs before first paint: after a language switch, skip the intro animations */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(sessionStorage.getItem("lang-switch")){document.documentElement.dataset.switched="true";sessionStorage.removeItem("lang-switch")}}catch(e){}`,
+          }}
+        />
+      </head>
       <body>
         <DotField />
         {children}

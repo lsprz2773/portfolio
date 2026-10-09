@@ -430,6 +430,36 @@ html {
   mix-blend-mode: normal;
 }
 
+/* After a language switch the view transition already fades the page,
+   so the intro animations (which also move content) are skipped. */
+html[data-switched] .page-in,
+html[data-switched] .header-in,
+html[data-switched] .hero-rise {
+  animation: none;
+}
+
+html[data-switched] .name-fill {
+  animation: none;
+  color: var(--foreground);
+}
+
+html[data-switched] .scribble path {
+  animation: none;
+  stroke-dashoffset: 0;
+}
+
+@media (min-width: 768px) {
+  html[data-switched] .photo-card {
+    animation: float 7s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 767px) {
+  html[data-switched] .photo-card {
+    animation: none;
+  }
+}
+
 /* Content stays visible when JavaScript is not available */
 @media (scripting: none) {
   .reveal {

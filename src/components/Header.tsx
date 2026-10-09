@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import type { Dictionary, Locale } from "@/app/[lang]/dictionaries";
 
@@ -12,29 +11,46 @@ type HeaderProps = {
 
 const sections = ["work", "services", "experience", "contact"] as const;
 
+/**
+ * The language links are plain anchors on purpose: /en and /es have different
+ * root layouts, and a full page load is what lets the browser fade between them.
+ * This also tells the next page to skip its intro animations (see the layout script).
+ */
+function markLanguageSwitch() {
+  try {
+    sessionStorage.setItem("lang-switch", "1");
+  } catch {
+    // Storage can be blocked; the page then just plays its intro again.
+  }
+}
+
 function LanguageSwitcher({ lang, label }: { lang: Locale; label: string }) {
   return (
     <span
       aria-label={label}
       className="inline-flex items-center gap-1 rounded-full border border-line px-3 py-1.5 text-sm"
     >
-      <Link
+      {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- full page load is intentional */}
+      <a
         href="/en"
         hrefLang="en"
+        onClick={markLanguageSwitch}
         aria-current={lang === "en" ? "true" : undefined}
         className={lang === "en" ? "font-bold" : "text-muted hover:text-foreground"}
       >
         EN
-      </Link>
+      </a>
       <span aria-hidden>/</span>
-      <Link
+      {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- full page load is intentional */}
+      <a
         href="/es"
         hrefLang="es"
+        onClick={markLanguageSwitch}
         aria-current={lang === "es" ? "true" : undefined}
         className={lang === "es" ? "font-bold" : "text-muted hover:text-foreground"}
       >
         ES
-      </Link>
+      </a>
     </span>
   );
 }
