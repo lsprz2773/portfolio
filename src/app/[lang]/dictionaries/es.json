@@ -41,7 +41,8 @@
     ],
     "imagePending": "Vista previa próximamente",
     "github": "GitHub",
-    "demo": "Sitio en vivo"
+    "demo": "Sitio en vivo",
+    "showImage": "Ver imagen"
   },
   "services": {
     "title": "Áreas de trabajo",

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { profile } from "@/content/profile";
+import { ProjectGallery } from "./ProjectGallery";
 import { Reveal } from "./Reveal";
 
 function ProjectLink({ href, label }: { href: string; label: string }) {
@@ -36,21 +36,15 @@ export function Work({ dict }: { dict: Dictionary["work"] }) {
             return (
               <Reveal key={item.name} delay={index * 100} className="h-full">
                 <article className="card-lift group flex h-full flex-col rounded-2xl border border-line bg-surface p-4 md:p-5">
-                  <div className="relative h-[200px] overflow-hidden rounded-xl md:h-[300px]">
-                    {links?.image ? (
-                      <Image
-                        src={links.image}
-                        alt={item.name}
-                        fill
-                        sizes="(min-width: 1024px) 560px, 100vw"
-                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                      />
-                    ) : (
+                  {links?.images.length ? (
+                    <ProjectGallery images={links.images} alt={item.name} label={dict.showImage} />
+                  ) : (
+                    <div className="aspect-[2/1] overflow-hidden rounded-xl">
                       <div className="flex h-full items-center justify-center bg-placeholder p-4 text-center text-sm text-muted transition-transform duration-500 group-hover:scale-105 md:text-base">
                         {dict.imagePending}
                       </div>
-                    )}
-                  </div>
+                    </div>
+                  )}
 
                   <h3 className="mb-1.5 mt-4 text-xl font-semibold md:mb-2 md:mt-6 md:text-2xl">
                     {item.name}

@@ -41,7 +41,8 @@
     ],
     "imagePending": "Project preview coming soon",
     "github": "GitHub",
-    "demo": "Live site"
+    "demo": "Live site",
+    "showImage": "Show image"
   },
   "services": {
     "title": "Areas of work",
