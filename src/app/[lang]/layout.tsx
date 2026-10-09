@@ -22,7 +22,11 @@ export async function generateMetadata({
   if (!hasLocale(lang)) return {};
   const dict = await getDictionary(lang);
 
+  // Absolute base for the link-preview image. Vercel exposes the production domain at build time.
+  const host = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+
   return {
+    metadataBase: new URL(host ? `https://${host}` : "http://localhost:3000"),
     title: dict.meta.title,
     description: dict.meta.description,
     alternates: { languages: { en: "/en", es: "/es" } },
