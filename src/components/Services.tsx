@@ -13,8 +13,12 @@ export function Services({ dict }: { dict: Dictionary["services"] }) {
 
         <div className="grid gap-6 md:gap-12 lg:grid-cols-3">
           {dict.items.map((item, index) => (
-            <Reveal key={index} delay={index * 80}>
-              <h3 className="mb-1.5 text-[19px] font-semibold md:mb-3 md:text-[22px]">
+            <Reveal key={index} delay={index * 80} className="group">
+              <span className="mb-3 block text-sm font-medium text-accent">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span aria-hidden className="line-grow mb-4 block h-px w-full bg-foreground" />
+              <h3 className="mb-1.5 text-[19px] font-semibold transition-transform duration-300 group-hover:translate-x-2 md:mb-3 md:text-[22px]">
                 {item.name}
               </h3>
               <p className="text-[15px] text-muted md:text-base">{item.description}</p>

@@ -44,6 +44,7 @@ export function Header({ lang, name, dict }: HeaderProps) {
 
   return (
     <header className="header-in sticky top-0 z-50 border-b border-line bg-background">
+      <span aria-hidden className="scroll-progress" />
       <div className="mx-auto flex max-w-[1280px] items-center justify-between px-4 py-4 md:px-16 md:py-5">
         <a href="#top" className="text-base font-semibold md:text-[17px]">
           {name}
@@ -51,7 +52,11 @@ export function Header({ lang, name, dict }: HeaderProps) {
 
         <nav className="hidden gap-8 text-[15px] text-muted md:flex" aria-label="Main">
           {sections.map((id) => (
-            <a key={id} href={`#${id}`} className="transition-colors hover:text-accent">
+            <a
+              key={id}
+              href={`#${id}`}
+              className="link-underline pb-0.5 transition-colors hover:text-foreground"
+            >
               {dict[id]}
             </a>
           ))}
@@ -59,7 +64,7 @@ export function Header({ lang, name, dict }: HeaderProps) {
 
         <div className="flex items-center gap-3 md:gap-5">
           <span className="hidden items-center gap-2 text-sm text-muted lg:flex">
-            <span className="h-2 w-2 rounded-full bg-available" aria-hidden />
+            <span className="dot-live h-2 w-2 rounded-full bg-available" aria-hidden />
             {dict.available}
           </span>
           <LanguageSwitcher lang={lang} label={dict.language} />

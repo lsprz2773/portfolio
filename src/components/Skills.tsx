@@ -23,7 +23,7 @@ function ChipGroup({
           items.map((item, index) => (
             <li key={item}>
               <Reveal delay={index * 40}>
-                <span className="block rounded-full border border-line px-4 py-2 text-sm md:text-[15px]">
+                <span className="block rounded-full border border-line px-4 py-2 text-sm transition duration-200 hover:-translate-y-0.5 hover:border-foreground md:text-[15px]">
                   {item}
                 </span>
               </Reveal>

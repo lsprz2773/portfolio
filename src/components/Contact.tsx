@@ -29,7 +29,7 @@ export function Contact({ dict, pending }: { dict: Dictionary["contact"]; pendin
               <a
                 href={profile.cvPath}
                 download
-                className="tap cta-button rounded-full bg-accent px-7 py-4 text-center text-base font-medium text-white"
+                className="btn cta-button rounded-full bg-accent px-7 py-4 text-center text-base font-medium text-white"
               >
                 {dict.downloadCv}
               </a>

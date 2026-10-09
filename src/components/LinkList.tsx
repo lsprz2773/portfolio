@@ -26,7 +26,10 @@ export function LinkList({ items, pendingLabel, tone = "light" }: LinkListProps)
           <span className="flex items-center justify-between py-3.5 text-[17px]">
             <span>{item.label}</span>
             {item.href ? (
-              <span aria-hidden={item.value ? undefined : true}>
+              <span
+                aria-hidden={item.value ? undefined : true}
+                className="inline-block transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-1"
+              >
                 {item.value ? item.value : "↗"}
               </span>
             ) : (
@@ -40,7 +43,7 @@ export function LinkList({ items, pendingLabel, tone = "light" }: LinkListProps)
             {item.href ? (
               <a
                 href={item.href}
-                className="block transition-colors hover:text-accent"
+                className="group block transition-colors hover:text-accent"
                 {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 {row}
