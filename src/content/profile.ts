@@ -31,12 +31,17 @@ export const profile = {
     {
       github: "https://github.com/AngelChame/readflow-frontend" as string | null,
       demo: "https://readflow.lat" as string | null,
-      image: null as string | null, // e.g. "/projects/readflow.png"
+      images: [
+        "/projects/readflow/1.webp",
+        "/projects/readflow/2.webp",
+        "/projects/readflow/3.webp",
+        "/projects/readflow/4.webp",
+      ],
     },
     {
       github: "https://github.com/lsprz2773/BariaPlus_Frontend" as string | null,
       demo: null as string | null,
-      image: null as string | null,
+      images: [] as string[], // e.g. "/projects/bariaplus/1.webp"
     },
   ],
 };
