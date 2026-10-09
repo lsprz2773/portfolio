@@ -4,6 +4,8 @@ export type LinkItem = {
   label: string;
   /** Optional icon shown before the label. */
   icon?: SocialIconName;
+  /** Accessible name when the visible label is not enough, e.g. "Instagram: przls27". */
+  ariaLabel?: string;
   /** Final URL (https, mailto, tel). `null` while the data is pending. */
   href: string | null;
   /** Text shown on the right when there is no arrow, e.g. an email address. */
@@ -50,6 +52,7 @@ export function LinkList({ items, pendingLabel, tone = "light" }: LinkListProps)
             {item.href ? (
               <a
                 href={item.href}
+                aria-label={item.ariaLabel}
                 className="group block transition-colors hover:text-accent"
                 {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >

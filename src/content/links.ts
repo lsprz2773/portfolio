@@ -8,11 +8,20 @@ type ContactLabels = {
   phone: string;
 };
 
-/** Social networks shown next to the photo in the hero. */
-export function socialLinks(labels: Pick<ContactLabels, "github" | "linkedin">): LinkItem[] {
+/** Social networks shown next to the photo in the hero. Labels are names, not translated. */
+export function socialLinks(): LinkItem[] {
+  const { facebook, instagram } = profile.social;
+  const phoneDigits = profile.phone?.replace(/\D/g, "");
+
   return [
-    { label: labels.github, icon: "github", href: profile.github },
-    { label: labels.linkedin, icon: "linkedin", href: profile.linkedin },
+    {
+      label: profile.phone ?? "WhatsApp",
+      icon: "whatsapp",
+      ariaLabel: `WhatsApp: ${profile.phone ?? ""}`.trim(),
+      href: phoneDigits ? `https://wa.me/52${phoneDigits}` : null,
+    },
+    { label: facebook.label, icon: "facebook", ariaLabel: `Facebook: ${facebook.label}`, href: facebook.href },
+    { label: instagram.label, icon: "instagram", ariaLabel: `Instagram: ${instagram.label}`, href: instagram.href },
   ];
 }
 

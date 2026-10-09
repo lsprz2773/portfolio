@@ -10,7 +10,7 @@ type HeroProps = {
 };
 
 export function Hero({ dict }: HeroProps) {
-  const { hero, contact, common } = dict;
+  const { hero, common } = dict;
 
   return (
     <section
@@ -94,7 +94,7 @@ export function Hero({ dict }: HeroProps) {
           </div>
 
           <div className="hero-rise w-full lg:w-[340px] lg:flex-none" style={{ animationDelay: "850ms" }}>
-            <LinkList items={socialLinks(contact)} pendingLabel={common.pending} />
+            <LinkList items={socialLinks()} pendingLabel={common.pending} />
           </div>
         </div>
       </div>
